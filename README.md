@@ -1,6 +1,6 @@
 # EduSupport — Student Support & Ticket Management
 
-A MERN-based Student Support & Ticket Management system developed for the Edumerge Product Engineering Assignment — Assignment 4.
+A MERN-based Student Support & Ticket Management system developed for the Edumerge Product Engineering Assignment.
 
 EduSupport provides a centralized workflow for students to raise support requests and for staff/admin users to manage ticket ownership, priority, status, SLA ageing, resolution and activity history.
 
@@ -110,11 +110,11 @@ The dashboard provides operational visibility into ticket activity, including:
 
 ## User Roles
 
-| Role | Capabilities |
-|------|--------------|
-| Student | Create and track own support tickets |
-| Staff | View tickets and modify tickets assigned to them |
-| Admin | Manage users, assignments and ticket operations |
+| Role    | Capabilities                                     |
+| ------- | ------------------------------------------------ |
+| Student | Create and track own support tickets             |
+| Staff   | View tickets and modify tickets assigned to them |
+| Admin   | Manage users, assignments and ticket operations  |
 
 ### Ticket Access Rules
 
@@ -155,7 +155,6 @@ The dashboard provides operational visibility into ticket activity, including:
 
 ## Architecture
 
-```text
                     ┌─────────────────────┐
                     │       Student       │
                     └──────────┬──────────┘
@@ -183,7 +182,9 @@ The dashboard provides operational visibility into ticket activity, including:
 
                      Staff ───────────────┘
                      Admin ────────────────┘
-Project Structure
+
+## Project Structure
+
 edusupport-ticket-management/
 │
 ├── client/
@@ -255,8 +256,10 @@ edusupport-ticket-management/
 │
 ├── .gitignore
 └── README.md
-Local Setup
-Prerequisites
+
+## Local Setup
+
+### Prerequisites
 
 Make sure the following are installed:
 
@@ -330,7 +333,7 @@ npm run dev
 The frontend runs on:
 
 http://localhost:5173
-Demo Accounts
+## Demo Accounts
 Student
 Email: student@edusupport.com
 Password: Student@123
@@ -343,7 +346,7 @@ Password: Admin@123
 
 These accounts are intended for demonstration purposes.
 
-Ticket Workflow
+## Ticket Workflow
 Student
    │
    │ Create Support Request
@@ -367,7 +370,7 @@ Closed
 
 Ticket activity and comments provide a history of important actions throughout the workflow.
 
-Status Workflow
+## Status Workflow
 
 Tickets can move through different operational states such as:
 
@@ -381,7 +384,7 @@ Closed
 
 The exact transition is controlled by the application's ticket management workflow.
 
-Priority & SLA
+## Priority & SLA
 
 Tickets support priority levels that influence expected response/resolution time.
 
@@ -393,7 +396,7 @@ Current time
 
 This provides staff and administrators with visibility into ageing and pending work.
 
-Security & Authorization
+## Security & Authorization
 
 The backend implements authorization using JWT and role-based access control.
 
@@ -413,16 +416,16 @@ Ticket ownership/assignment where applicable
 
 Frontend controls are therefore supported by backend authorization rather than relying only on UI restrictions.
 
-Engineering Decisions
-MERN Architecture
+## Engineering Decisions
+### MERN Architecture
 
 React was selected for the frontend and Express/Node.js for the backend to provide a clear separation between UI, API and data layers.
 
-MongoDB Atlas
+### MongoDB Atlas
 
 MongoDB was selected because the ticket and activity data are naturally represented as document-oriented records and the application requires flexible ticket metadata.
 
-JWT Authentication
+### JWT Authentication
 
 JWT provides stateless authentication between the React frontend and Express API.
 
@@ -438,7 +441,7 @@ Activity History
 
 Ticket activity records provide an audit-style history of important ticket events and comments.
 
-Validation & Edge Cases
+## Validation & Edge Cases
 
 The application handles cases including:
 
@@ -456,7 +459,7 @@ Passwords below the minimum length
 Duplicate user registration
 Empty ticket lists
 Unassigned tickets
-Assumptions
+## Assumptions
 
 The following assumptions were made for the prototype:
 
@@ -468,7 +471,7 @@ SLA durations are determined by ticket priority.
 MongoDB Atlas is used as the application database.
 The prototype uses seeded demonstration accounts for evaluation.
 Notifications outside the application are outside the current prototype scope.
-Scope & Trade-offs
+## Scope & Trade-offs
 
 The implementation focuses on the core ticket lifecycle and operational workflow rather than adding secondary features that are not essential to the assignment.
 
@@ -482,7 +485,7 @@ Advanced reporting/BI integration
 
 These could be added in a production implementation depending on institutional requirements.
 
-Testing
+## Testing
 
 The application was manually validated for the primary user workflows:
 
@@ -518,19 +521,20 @@ Responsive UI
 
 The application was also checked for desktop and mobile layouts.
 
-Deployment
+## Deployment
 
 The application is deployed using Render.
 
-Frontend
+### Frontend 
 https://edusupport-mmjt.onrender.com/
-Backend
+### Backend
 https://edusupport-api-12hv.onrender.com/
 
 The production frontend communicates with the deployed Express API through the configured API URL.
 
-Repository
+## Repository
 
-GitHub:
+### GitHub:
 
 https://github.com/gavvalaharsha1820/edusupport-ticket-management/
+```
