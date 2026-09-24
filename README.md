@@ -1,16 +1,24 @@
 # EduSupport — Student Support & Ticket Management
 
-   |
-   +-- Create support request --> New Ticket
-                                  |
-                                  +-- Admin assigns staff --> Assigned Staff
-                                                               |
-                                                               +-- Staff processes ticket --> In Progress
-                                                                                               |
-                                                                                               +-- Staff resolves issue --> Resolved
-                                                                                                                               |
-                                                                                                                               v
-                                                                                                                             Closed
+A MERN-based Student Support & Ticket Management system developed for the Edumerge Product Engineering Assignment.
+
+EduSupport provides a centralized workflow for students to raise support requests and for staff/admin users to manage ticket ownership, priority, status, SLA ageing, resolution and activity history.
+
+---
+
+## Live Demo
+
+### Frontend
+
+https://edusupport-mmjt.onrender.com/
+
+### Backend API
+
+https://edusupport-api-12hv.onrender.com/
+
+---
+
+## Problem Statement
 
 Students may need support for requests related to:
 
@@ -341,6 +349,7 @@ Password: Admin@123
 These accounts are intended for demonstration purposes.
 
 ## Ticket Workflow
+```text
 Student
    |
    | Create Support Request
@@ -361,13 +370,13 @@ Resolved
    |
    v
 Closed
-
+```
 Ticket activity and comments provide a history of important actions throughout the workflow.
 
 ## Status Workflow
 
 Tickets can move through different operational states such as:
-
+``` text
 Open
   ↓
 In Progress
@@ -375,7 +384,7 @@ In Progress
 Resolved
   ↓
 Closed
-
+```
 The exact transition is controlled by the application's ticket management workflow.
 
 ## Priority & SLA
