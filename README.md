@@ -178,73 +178,76 @@ The dashboard provides operational visibility into ticket activity, including:
 ## Project Structure
 
 edusupport-ticket-management/
-|
-+-- client/
-|   +-- src/
-|   |   +-- components/
-|   |   |   +-- AppShell.jsx
-|   |   |   +-- Badge.jsx
-|   |   |   +-- EmptyState.jsx
-|   |   |   +-- Logo.jsx
-|   |   |   +-- MetricCard.jsx
-|   |   |   +-- Modal.jsx
-|   |   |   +-- TicketDetailModal.jsx
-|   |   |
-|   |   +-- constants/
-|   |   |   +-- options.js
-|   |   |
-|   |   +-- hooks/
-|   |   |   +-- useAuth.js
-|   |   |
-|   |   +-- lib/
-|   |   |   +-- api.js
-|   |   |
-|   |   +-- pages/
-|   |       +-- LoginPage.jsx
-|   |       +-- DashboardPage.jsx
-|   |       +-- TicketsPage.jsx
-|   |       +-- NewTicketPage.jsx
-|   |       +-- UsersPage.jsx
-|   |
-|   +-- package.json
-|   +-- vite.config.js
-|   +-- index.html
-|
-+-- server/
-|   +-- src/
-|   |   +-- config/
-|   |   |   +-- db.js
-|   |   |
-|   |   +-- controllers/
-|   |   |   +-- auth.js
-|   |   |   +-- tickets.js
-|   |   |   +-- users.js
-|   |   |
-|   |   +-- middleware/
-|   |   |   +-- auth.js
-|   |   |
-|   |   +-- models/
-|   |   |   +-- User.js
-|   |   |   +-- Ticket.js
-|   |   |   +-- Activity.js
-|   |   |
-|   |   +-- routes/
-|   |   |   +-- auth.js
-|   |   |   +-- tickets.js
-|   |   |   +-- users.js
-|   |   |
-|   |   +-- utils/
-|   |   |   +-- sla.js
-|   |   |
-|   |   +-- seed.js
-|   |   +-- server.js
-|   |
-|   +-- package.json
-|   +-- .env.example
-|
-+-- .gitignore
-+-- README.md
-
+│
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AppShell.jsx
+│   │   │   ├── Badge.jsx
+│   │   │   ├── EmptyState.jsx
+│   │   │   ├── Logo.jsx
+│   │   │   ├── MetricCard.jsx
+│   │   │   ├── Modal.jsx
+│   │   │   └── TicketDetailModal.jsx
+│   │   │
+│   │   ├── constants/
+│   │   │   └── options.js
+│   │   │
+│   │   ├── hooks/
+│   │   │   └── useAuth.js
+│   │   │
+│   │   ├── lib/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── DashboardPage.jsx
+│   │   │   ├── TicketsPage.jsx
+│   │   │   ├── NewTicketPage.jsx
+│   │   │   └── UsersPage.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── styles.css
+│   │
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
+│
+├── server/
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   │
+│   │   ├── controllers/
+│   │   │   ├── auth.js
+│   │   │   ├── tickets.js
+│   │   │   └── users.js
+│   │   │
+│   │   ├── middleware/
+│   │   │   └── auth.js
+│   │   │
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Ticket.js
+│   │   │   └── Activity.js
+│   │   │
+│   │   ├── routes/
+│   │   │   ├── auth.js
+│   │   │   ├── tickets.js
+│   │   │   └── users.js
+│   │   │
+│   │   ├── utils/
+│   │   │   └── sla.js
+│   │   │
+│   │   ├── seed.js
+│   │   └── server.js
+│   │
+│   ├── package.json
+│   └── .env.example
+│
+├── .gitignore
+└── README.md
 ## Local Setup
 
 ### Prerequisites
