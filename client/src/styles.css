@@ -242,3 +242,294 @@ td:first-child span{font-size:10px;color:#8993a3;margin-top:4px}
   color: #344054;
   font-size: 14px;
 }
+/* =========================
+   Profile
+========================= */
+
+.profile-button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.profile-button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.avatar-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.profile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-modal {
+  width: min(480px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+}
+
+.profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.profile-modal-header h2 {
+  margin: 4px 0 0;
+}
+
+.modal-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #667085;
+}
+
+.close-button {
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #667085;
+}
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+  margin-bottom: 18px;
+}
+
+.profile-summary > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-summary strong {
+  font-size: 16px;
+}
+
+.profile-summary span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.avatar-large {
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+}
+
+.profile-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.profile-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  border: 1px solid #e4e7ec;
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-action:hover {
+  background: #f8fafc;
+  border-color: #d0d5dd;
+}
+
+.profile-action > span {
+  font-size: 20px;
+}
+
+.profile-action div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-action small {
+  color: #667085;
+}
+
+.profile-form {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #eaecf0;
+  display: grid;
+  gap: 14px;
+}
+
+.profile-form h3 {
+  margin: 0;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+  font: inherit;
+}
+
+.password-help {
+  color: #667085;
+  margin-top: -8px;
+}
+
+.profile-signout {
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  border: 1px solid #f04438;
+  background: white;
+  color: #d92d20;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-signout:hover {
+  background: #fef3f2;
+}
+
+/* =========================
+   Mobile Header
+========================= */
+
+.mobile-header {
+  display: none;
+}
+
+.mobile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-icon-button,
+.mobile-menu-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e4e7ec;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.mobile-icon-button {
+  font-weight: 700;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    height: 64px;
+    padding: 0 16px;
+    background: white;
+    border-bottom: 1px solid #eaecf0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobile-header .brand,
+  .mobile-header .logo {
+    margin: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    width: min(280px, 85vw);
+    z-index: 950;
+    transform: translateX(-105%);
+    transition: transform 0.2s ease;
+    box-shadow: 12px 0 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-area {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .topbar {
+    padding: 18px 16px;
+  }
+
+  .topbar-user {
+    display: none;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+  }
+
+  .topbar h1 {
+    font-size: 22px;
+  }
+
+  .profile-modal {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  /*
+   * Always show Sign out inside the profile modal.
+   * This solves the mobile navigation problem.
+   */
+
+  .sidebar-footer {
+    padding-bottom: 20px;
+  }
+}
