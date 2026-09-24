@@ -177,6 +177,7 @@ The dashboard provides operational visibility into ticket activity, including:
 
 ## Project Structure
 
+```text
 edusupport-ticket-management/
 │
 ├── client/
