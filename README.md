@@ -1,24 +1,16 @@
 # EduSupport — Student Support & Ticket Management
 
-A MERN-based Student Support & Ticket Management system developed for the Edumerge Product Engineering Assignment.
-
-EduSupport provides a centralized workflow for students to raise support requests and for staff/admin users to manage ticket ownership, priority, status, SLA ageing, resolution and activity history.
-
----
-
-## Live Demo
-
-### Frontend
-
-https://edusupport-mmjt.onrender.com/
-
-### Backend API
-
-https://edusupport-api-12hv.onrender.com/
-
----
-
-## Problem Statement
+   |
+   +-- Create support request --> New Ticket
+                                  |
+                                  +-- Admin assigns staff --> Assigned Staff
+                                                               |
+                                                               +-- Staff processes ticket --> In Progress
+                                                                                               |
+                                                                                               +-- Staff resolves issue --> Resolved
+                                                                                                                               |
+                                                                                                                               v
+                                                                                                                             Closed
 
 Students may need support for requests related to:
 
@@ -186,76 +178,72 @@ The dashboard provides operational visibility into ticket activity, including:
 ## Project Structure
 
 edusupport-ticket-management/
-│
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── AppShell.jsx
-│   │   │   ├── Badge.jsx
-│   │   │   ├── EmptyState.jsx
-│   │   │   ├── Logo.jsx
-│   │   │   ├── MetricCard.jsx
-│   │   │   ├── Modal.jsx
-│   │   │   └── TicketDetailModal.jsx
-│   │   │
-│   │   ├── constants/
-│   │   │   └── options.js
-│   │   │
-│   │   ├── hooks/
-│   │   │   └── useAuth.js
-│   │   │
-│   │   ├── lib/
-│   │   │   └── api.js
-│   │   │
-│   │   ├── pages/
-│   │   │   ├── LoginPage.jsx
-│   │   │   ├── DashboardPage.jsx
-│   │   │   ├── TicketsPage.jsx
-│   │   │   ├── NewTicketPage.jsx
-│   │   │   └── UsersPage.jsx
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── styles.css
-│   │
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index.html
-│
-├── server/
-│   ├── src/
-│   │   ├── config/
-│   │   │   └── db.js
-│   │   │
-│   │   ├── controllers/
-│   │   │   ├── auth.js
-│   │   │   ├── tickets.js
-│   │   │   └── users.js
-│   │   │
-│   │   ├── middleware/
-│   │   │   └── auth.js
-│   │   │
-│   │   ├── models/
-│   │   │   ├── User.js
-│   │   │   ├── Ticket.js
-│   │   │   └── Activity.js
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── auth.js
-│   │   │   ├── tickets.js
-│   │   │   └── users.js
-│   │   │
-│   │   ├── utils/
-│   │   │   └── sla.js
-│   │   │
-│   │   ├── seed.js
-│   │   └── server.js
-│   │
-│   ├── package.json
-│   └── .env.example
-│
-├── .gitignore
-└── README.md
+|
++-- client/
+|   +-- src/
+|   |   +-- components/
+|   |   |   +-- AppShell.jsx
+|   |   |   +-- Badge.jsx
+|   |   |   +-- EmptyState.jsx
+|   |   |   +-- Logo.jsx
+|   |   |   +-- MetricCard.jsx
+|   |   |   +-- Modal.jsx
+|   |   |   +-- TicketDetailModal.jsx
+|   |   |
+|   |   +-- constants/
+|   |   |   +-- options.js
+|   |   |
+|   |   +-- hooks/
+|   |   |   +-- useAuth.js
+|   |   |
+|   |   +-- lib/
+|   |   |   +-- api.js
+|   |   |
+|   |   +-- pages/
+|   |       +-- LoginPage.jsx
+|   |       +-- DashboardPage.jsx
+|   |       +-- TicketsPage.jsx
+|   |       +-- NewTicketPage.jsx
+|   |       +-- UsersPage.jsx
+|   |
+|   +-- package.json
+|   +-- vite.config.js
+|   +-- index.html
+|
++-- server/
+|   +-- src/
+|   |   +-- config/
+|   |   |   +-- db.js
+|   |   |
+|   |   +-- controllers/
+|   |   |   +-- auth.js
+|   |   |   +-- tickets.js
+|   |   |   +-- users.js
+|   |   |
+|   |   +-- middleware/
+|   |   |   +-- auth.js
+|   |   |
+|   |   +-- models/
+|   |   |   +-- User.js
+|   |   |   +-- Ticket.js
+|   |   |   +-- Activity.js
+|   |   |
+|   |   +-- routes/
+|   |   |   +-- auth.js
+|   |   |   +-- tickets.js
+|   |   |   +-- users.js
+|   |   |
+|   |   +-- utils/
+|   |   |   +-- sla.js
+|   |   |
+|   |   +-- seed.js
+|   |   +-- server.js
+|   |
+|   +-- package.json
+|   +-- .env.example
+|
++-- .gitignore
++-- README.md
 
 ## Local Setup
 
@@ -348,24 +336,24 @@ These accounts are intended for demonstration purposes.
 
 ## Ticket Workflow
 Student
-   │
-   │ Create Support Request
-   ▼
+   |
+   | Create Support Request
+   v
 New Ticket
-   │
-   │ Admin Assignment
-   ▼
+   |
+   | Admin Assignment
+   v
 Assigned Staff
-   │
-   │ Processing
-   ▼
+   |
+   | Processing
+   v
 In Progress
-   │
-   │ Resolution
-   ▼
+   |
+   | Resolution
+   v
 Resolved
-   │
-   ▼
+   |
+   v
 Closed
 
 Ticket activity and comments provide a history of important actions throughout the workflow.
@@ -400,11 +388,11 @@ This provides staff and administrators with visibility into ageing and pending w
 
 The backend implements authorization using JWT and role-based access control.
 
-Authentication
+### Authentication
 
 Users authenticate through the login API and receive a JWT token.
 
-Authorization
+### Authorization
 
 Backend APIs verify:
 
