@@ -1,22 +1,29 @@
-const API_BASE = "http://localhost:5000/api";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api";
 
 export async function api(path, options = {}) {
-  const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
   const token = localStorage.getItem("token");
-  if (token) headers.Authorization = `Bearer ${token}`;
 
-  const response = await fetch(`${API_BASE}${path}`, { ...options, headers });
-  const text = await response.text();
+  const response = await fetch(`${API_URL}${path}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(token
+        ? {
+            Authorization: `Bearer ${token}`
+          }
+        : {}),
+      ...(options.headers || {})
+    }
+  });
 
-  let data = {};
-  try {
-    data = text ? JSON.parse(text) : {};
-  } catch {
-    data = { message: text || "Unexpected server response" };
-  }
+  const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || `Request failed (${response.status})`);
+    throw new Error(
+      data.message || "Something went wrong"
+    );
   }
 
   return data;
